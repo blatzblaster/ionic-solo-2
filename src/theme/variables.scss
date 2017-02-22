@@ -12,7 +12,10 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-
+@mixin force3dRender() {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
 
 
 // Named Color Variables
@@ -30,6 +33,16 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222
 );
+
+$gray-border: #c8c7cc;
+$blue-500: #377df2;
+
+
+// Global Styles
+.ion-page ion-list-header {
+  background-color: $blue-500;
+  color: white;
+}
 
 
 // App iOS Variables
@@ -76,3 +89,7 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+// User Styles
+// --------------------------------------------------
+@import "app.core";
